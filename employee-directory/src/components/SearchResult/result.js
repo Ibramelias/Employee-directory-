@@ -1,41 +1,32 @@
-import React from "react"
-// import { Container,Table } from 'react-bootstrap'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faImage } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
 
+function Result(props) {
 
-function Results(props) {
     return (
-        <div className="SearchResults">
+
+        <table className="table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th><button className="sortBtn" onClick={props.handleSort}>State Office</button></th>
+                    <th scope="col">#</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Picture</th>
                 </tr>
             </thead>
             <tbody>
-                 {/* "map" through our getUsers results for all users */}
-                {props.results.map(result => (
+                {props.results.map((result) => (
                     <tr key={result}>
-                        <td>
-                            <img
-                                src={result.picture.thumbnail}
-                                className="userPhoto" alt={result.name.first}
-                            />
-                        </td>
-                        <td>{result.name.title}.{result.name.first} {result.name.last}</td>
-                        <td>{result.email}</td>
-                        <td>+1-{result.cell}</td>
-                        <td>{result.location.state}</td>
+                        <th scope="row"></th>
+                        <td>{props.name.last}</td>
+                        <td>{props.name.first}</td>
+                        <td>{props.location.city}, {props.location.state}, {props.location.country}</td>
+                        <td><img src={props.picture.thumbnail} alt="thumbnail" /></td>
                     </tr>
                 ))}
             </tbody>
-
-        </div>
+        </table>
     )
 }
 
-
-export default Results;
+export default Result;

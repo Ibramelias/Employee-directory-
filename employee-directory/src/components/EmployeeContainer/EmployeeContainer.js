@@ -14,10 +14,8 @@ class EmployeeContainer extends Component {
     };
 
     componentDidMount() {
-        // this.employeeData("")
-        API.getEmlpoyeeData().then(res => this.setState({
-            Results: res.data.Results,
-            users: res.data.Results
+        API.getEmlpoyeeData()
+        .then(res => this.setState({Results: res.data.Results, users: res.data.Results
         })).catch(err => console.log(err));
     }
 
