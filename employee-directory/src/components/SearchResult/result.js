@@ -1,7 +1,7 @@
 import React from "react";
 
 function Result(props) {
-
+    console.log(props)
     return (
 
         <table className="table">
@@ -15,14 +15,14 @@ function Result(props) {
                 </tr>
             </thead>
             <tbody>
-                {props.results.map((result) => (
-                    <tr key={result}>
-                        <th scope="row"></th>
-                        <td>{props.name.last}</td>
-                        <td>{props.name.first}</td>
-                        <td>{props.location.city}, {props.location.state}, {props.location.country}</td>
-                        <td><img src={props.picture.thumbnail} alt="thumbnail" /></td>
-                    </tr>
+                {props.results.map(result => (
+                    <tr key={result.id.value}>
+                    <th scope="row"></th>
+                    <td>{result.name.last}</td>
+                    <td>{result.name.first}</td>
+                    <td>{result.location.city}, {result.location.state}, {result.location.country}</td>
+                    <td><img src={result.picture.thumbnail} alt="thumbnail" /></td>
+                </tr>
                 ))}
             </tbody>
         </table>

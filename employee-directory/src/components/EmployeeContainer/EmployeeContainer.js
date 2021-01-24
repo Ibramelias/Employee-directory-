@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useState} from "react";
 import Navbar from "../Navbar/Navbar";
 import SearchForm from "../SearchForm/SearchForm";
 import Result from "../SearchResult/result";
@@ -6,17 +6,18 @@ import API from "../../utils/api"
 
 
 class EmployeeContainer extends Component {
-
+    
     state = {
-        Results: [],
+        results: [],
         users: [],
         search: ""
     };
 
     componentDidMount() {
-        API.getEmlpoyeeData()
-        .then(res => this.setState({Results: res.data.Results, users: res.data.Results
-        })).catch(err => console.log(err));
+        API.getEmployeeData()
+        .then(
+            res => this.setState({results: res.data.results,users: res.data.results})
+        ).catch(err => console.log(err));
     }
 
     handleInputChange = event => {
