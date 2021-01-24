@@ -11,6 +11,7 @@ function Result(props) {
                     <th scope="col">Last name</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Location</th>
+                    <th scope="col">Phone Number</th>
                     <th scope="col">Picture</th>
                 </tr>
             </thead>
@@ -20,7 +21,8 @@ function Result(props) {
                     <th scope="row"></th>
                     <td>{result.name.last}</td>
                     <td>{result.name.first}</td>
-                    <td>{result.location.city}, {result.location.state}, {result.location.country}</td>
+                    <td>{result.location.city}, {result.location.state}</td>
+                    <td>{result.cell}</td>
                     <td><img src={result.picture.thumbnail} alt="thumbnail" /></td>
                 </tr>
                 ))}
