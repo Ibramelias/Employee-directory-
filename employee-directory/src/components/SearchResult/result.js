@@ -1,16 +1,41 @@
-import React from "react";
-import "./style.css";
+import React from "react"
+// import { Container,Table } from 'react-bootstrap'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faImage } from '@fortawesome/free-solid-svg-icons'
+
 
 function Results(props) {
-  return (
-    <ul className="list-group search-results">
-      {props.results.map(result => (
-        <li key={result} className="list-group-item">
-          <img alt="employee" src={result} className="img-fluid" />
-        </li>
-      ))}
-    </ul>
-  );
+    return (
+        <div className="SearchResults">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th><button className="sortBtn" onClick={props.handleSort}>State Office</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                 {/* "map" through our getUsers results for all users */}
+                {props.results.map(result => (
+                    <tr key={result}>
+                        <td>
+                            <img
+                                src={result.picture.thumbnail}
+                                className="userPhoto" alt={result.name.first}
+                            />
+                        </td>
+                        <td>{result.name.title}.{result.name.first} {result.name.last}</td>
+                        <td>{result.email}</td>
+                        <td>+1-{result.cell}</td>
+                        <td>{result.location.state}</td>
+                    </tr>
+                ))}
+            </tbody>
+
+        </div>
+    )
 }
+
 
 export default Results;

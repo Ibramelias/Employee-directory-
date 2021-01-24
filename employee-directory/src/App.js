@@ -6,9 +6,9 @@ import EmployeeContainer from "./components/EmployeeContainer/EmployeeContainer"
 
 function App() {
   return (
-    <div className="App">
-     <EmployeeContainer/>
-    </div>
+
+    <EmployeeContainer />
+
   );
 }
 
