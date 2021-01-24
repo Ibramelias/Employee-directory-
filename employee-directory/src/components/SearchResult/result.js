@@ -1,9 +1,16 @@
 import React from "react";
+import "./style.css";
 
-function Result (){
-    return
+function Results(props) {
+  return (
+    <ul className="list-group search-results">
+      {props.results.map(result => (
+        <li key={result} className="list-group-item">
+          <img alt="employee" src={result} className="img-fluid" />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-
-
-export default Result;
+export default Results;
